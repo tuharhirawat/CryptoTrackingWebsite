@@ -1,11 +1,12 @@
-.header{
+/* .header{
   background-image: url('https://plus.unsplash.com/premium_photo-1663089688180-444ff0066e5d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D');
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 200vh;
+
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: top;
   text-align: center;
 }
 
@@ -13,7 +14,7 @@
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
+  background-color: white;
   text-align: center;
 }
 
@@ -28,7 +29,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh; /* Centers the content vertically */
+  height: 80vh; 
   padding: 20px;
   position: relative;
 }
@@ -65,7 +66,7 @@ main {
 
 #suggestions {
   position: absolute;
-  top: 50px; /* Adjusts the dropdown below the search bar */
+  top: 50px; 
   left: 15%;
   width: 70%;
   max-height: 200px;
@@ -110,5 +111,42 @@ img {
 }
 
 .footer{
-  color: red;
+  color:black;
+  font-size: larger;
 }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+} */
+
+/* .header {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #282c34;
+  color: white;
+  position: fixed;
+  top: 0;
+} */
+
+.header{
+  background-size: cover;
+  background-position: center;
+  background-color: aqua;
+  color: grey;
+  height: 200vh;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 2rem;
+}
+
