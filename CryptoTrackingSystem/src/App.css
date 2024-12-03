@@ -150,3 +150,26 @@ body {
   font-size: 2rem;
 }
 
+/* App.css */
+.App {
+  margin-top: 60px; /* Adjust this based on navbar height */
+  font-family: Arial, sans-serif;
+}
+
+main {
+  padding: 20px;
+}
+
+.App h1{
+  background-color: aqua;  
+  text-align: center;
+}
+
+.App p{
+  text-align: center;
+  justify-content: center;
+  background-color: aqua;
+  text-shadow: 20px;
+  font-weight: 400;
+  font-size: 18px;
+}
