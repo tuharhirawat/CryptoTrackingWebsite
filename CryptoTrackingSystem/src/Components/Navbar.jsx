@@ -7,7 +7,6 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="WebName">
-          {/* <img src="https://cryptologos.cc/logos/coinstats-logo.png" alt="CoinStats" className="logo-img" /> */}
           Crypto Tracker
         </div>
         <div className="navbar-links">

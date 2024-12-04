@@ -36,7 +36,7 @@ function App() {
       <main>
         <h1>Welcome to the Crypto World</h1>
         <p>Here You Will Find All Kind Of Crypto Airdrops Whcih Are Free As Well As Paid <br/>
-        Crypto Is The Future. Our Only Motto Is Learn And Earn Crypto</p>        
+        Crypto Is The Future. Our Only Motto Is Learn And Earn Crypto</p>       
       </main>
     </div>
     </>
