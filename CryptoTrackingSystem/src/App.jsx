@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-// import Navbar from './Components/Navbar';
+import Navbar from './Components/Navbar';
+import SignUp from './Components/Signup'; 
 import Main from './Components/MainBody';
-import SignUp from './Components/Signup';
 
 function App() {
   return (
     <>
       <div className="App">
-        
+        <Navbar />
         <main>
           <h1>Welcome to the Crypto World</h1>
           <p>
@@ -17,10 +17,10 @@ function App() {
           </p>
 
           {/* Include the SignUp component here */}
-          <SignUp/>
+          <SignUp />
         </main>
       </div>
-      <Main />
+      {/* <Main /> */}
     </>
   );
 }
