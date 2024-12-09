@@ -27,6 +27,7 @@
 import React from 'react';
 import Navbar from './Components/Navbar';
 import './App.css';
+import Main from './Components/MainBody';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         Crypto Is The Future. Our Only Motto Is Learn And Earn Crypto</p>       
       </main>
     </div>
+    <Main />
     </>
   );
 }
