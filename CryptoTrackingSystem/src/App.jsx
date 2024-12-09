@@ -30,6 +30,7 @@ import './App.css';
 // import SignUp from './Components/SignUp';
 import Main from './Components/MainBody';
 import SignIn from './Components/SignIn';
+import Main from './Components/MainBody';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
     </div>
       {/* <Main /> */}
       <SignIn/>
+    <Main />
     </>
   );
 }
