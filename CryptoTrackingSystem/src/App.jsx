@@ -1,24 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Header from './assets/Components/Layout/Header'
-import Main from './assets/Components/Layout/MainBody'
-import Footer from './assets/Components/Layout/footer'
-
-
+import React from 'react';
+import './App.css';
+// import Navbar from './Components/Navbar';
+import Main from './Components/MainBody';
+import SignUp from './Components/Signup';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-    
-      <Header/>
-      <Main/>
-      <Footer/>
+      <div className="App">
+        
+        <main>
+          <h1>Welcome to the Crypto World</h1>
+          <p>
+            Here You Will Find All Kind Of Crypto Airdrops Which Are Free As Well As Paid.
+            Crypto Is The Future. Our Only Motto Is Learn And Earn Crypto.
+          </p>
+
+          {/* Include the SignUp component here */}
+          <SignUp/>
+        </main>
+      </div>
+      <Main />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
