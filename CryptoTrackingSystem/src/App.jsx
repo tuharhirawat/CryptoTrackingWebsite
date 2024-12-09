@@ -1,3 +1,4 @@
+
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
@@ -5,7 +6,6 @@
 // import Header from './Components/Header'
 // import Main from './Components/MainBody'
 // import Footer from './Components/footer'
-
 
 
 // function App() {
@@ -27,18 +27,28 @@
 import React from 'react';
 import Navbar from './Components/Navbar';
 import './App.css';
+// import SignUp from './Components/SignUp';
+import Main from './Components/MainBody';
+import SignIn from './Components/SignIn';
+import Main from './Components/MainBody';
 
 function App() {
   return (
     <>
+
     <div className="App">
       <Navbar />
       <main>
         <h1>Welcome to the Crypto World</h1>
         <p>Here You Will Find All Kind Of Crypto Airdrops Whcih Are Free As Well As Paid <br/>
         Crypto Is The Future. Our Only Motto Is Learn And Earn Crypto</p>       
+
+        {/* <SignUp/> */}
       </main>
     </div>
+      {/* <Main /> */}
+      <SignIn/>
+    <Main />
     </>
   );
 }
