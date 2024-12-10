@@ -10,6 +10,9 @@ const SignUp = () => {
     Email: "",
     Password: ""
   });
+  
+  const [successMessage, setSuccessMessage] = useState("");  // State to handle success message
+  const [errorMessage, setErrorMessage] = useState("");  // State to handle error message
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,19 +29,35 @@ const SignUp = () => {
       const response = await axios.post(signupURL, SignUpData);
       console.log('User registered successfully:', response.data);
 
+      // Display success message
+      setSuccessMessage("Signup successful! Welcome to Crypto Tracker.");
+      
+      // Clear the form data
       setSignUpData({
         Name: "",
         Email: "",
         Password: ""
       });
+
+      // Clear the success message after 5 seconds
+      setTimeout(() => {
+        setSuccessMessage("");
+      }, 5000);
+
     } catch (error) {
       console.error("Error during sign up:", error);
+      
+      // Display error message
+      setErrorMessage("Error during signup. Please try again.");
     }
   };
 
   return (
     <div className="sign-up-container">
       <h2>Sign Up</h2>
+      {successMessage && <div className="success-message">{successMessage}</div>}  
+      {errorMessage && <div className="error-message">{errorMessage}</div>} 
+      
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="Name">Name:</label>
