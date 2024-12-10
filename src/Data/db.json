@@ -1,0 +1,61 @@
+{
+  "Node_Airdrops": [
+    {
+      "name": "Ethereum",
+      "desc": "Rewards for running Ethereum validator nodes.",
+      "funding": 5000,
+      "id": "0ebe"
+    },
+    {
+      "name": "Solana",
+      "desc": "Incentives for maintaining Solana validator nodes.",
+      "funding": 3000,
+      "id": "59eb"
+    },
+    {
+      "name": "Polkadot",
+      "desc": "Airdrops for active Polkadot validator nodes.",
+      "funding": 7000,
+      "id": "23a2"
+    },
+    {
+      "name": "Cosmos",
+      "desc": "Grants provided to Cosmos Hub node operators.",
+      "funding": 4500,
+      "id": "eb28"
+    },
+    {
+      "name": "Avalanche",
+      "desc": "Support for Avalanche node operators.",
+      "funding": 4000,
+      "id": "0f8c"
+    }
+  ],
+  "users": [
+    {
+      "Name": "Pranitha",
+      "Email": "pranitha@gmail.com",
+      "Password": "123456",
+      "ConfirmPassword": "123456",
+      "id": "0a31"
+    },
+    {
+      "id": "cb13",
+      "Name": "pravallika",
+      "Email": "pravallika@gmail.com",
+      "Password": "kjsbdjkcb"
+    },
+    {
+      "id": "fd4c",
+      "Name": "Valli111",
+      "Email": "valli@gmail.com",
+      "Password": "1234511"
+    },
+    {
+      "id": "46ae",
+      "Name": "valliiii",
+      "Email": "dtuj@gmail.cium",
+      "Password": "12345"
+    }
+  ]
+}
