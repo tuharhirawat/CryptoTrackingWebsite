@@ -1,0 +1,39 @@
+{
+    "Node_Airdrops": [
+      {
+        "name": "Ethereum",
+        "desc": "Rewards for running Ethereum validator nodes.",
+        "funding": 5000
+      },
+
+      {
+        "name": "Solana",
+        "desc": "Incentives for maintaining Solana validator nodes.",
+        "funding": 3000
+      },
+
+      {
+        "name": "Polkadot",
+        "desc": "Airdrops for active Polkadot validator nodes.",
+        "funding": 7000
+      },
+
+      {
+        "name": "Cosmos",
+        "desc": "Grants provided to Cosmos Hub node operators.",
+        "funding": 4500
+      },
+
+      {
+        "name": "Avalanche",
+        "desc": "Support for Avalanche node operators.",
+        "funding": 4000
+      }
+    ],
+
+    "users":[
+        {"Email":"tushar@gmail.com",
+        "Password":"1111"}
+    ]
+
+  }
