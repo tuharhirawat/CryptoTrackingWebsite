@@ -1,28 +1,27 @@
 import React from 'react';
 import './Navbar.css';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <>
     <nav className="navbar">
       <div className="navbar-container">
         <div className="WebName">
           Crypto Tracker
         </div>
         <div className="navbar-links">
-          <a href="/" className="nav-link">Home</a>
-          <a href="/portfolio" className="nav-link">Portfolio</a>
-          <a href="/assets" className="nav-link">Assets</a>
-          <a href="/learn" className="nav-link">Learn</a>
-          <a href="/pricing" className="nav-link">Pricing</a>
+        <NavLink to="/" className="nav-link">Home</NavLink>
+        <NavLink to="/pricing" className="nav-link">Pricing</NavLink>
+          <NavLink to="/news" className="nav-link">News</NavLink>
+          <NavLink to="/about" className="nav-link">About</NavLink>
+          
         </div>
         <div className="navbar-buttons">
-          <button className="signin-btn">Sign In</button>
-          <button className="signup-btn">Sign Up</button>
+        <NavLink to="/signin"><button className="signin-btn">Sign In</button></NavLink>
+        <NavLink to="/signup"><button className="signup-btn">Sign Up</button></NavLink>
         </div>
       </div>
     </nav>
-    </>
   );
 }
 

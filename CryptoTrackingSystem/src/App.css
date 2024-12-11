@@ -163,15 +163,33 @@ main {
 }
 
 .App h1{
-  background-color: aqua;  
   text-align: center;
 }
 
 .App p{
   text-align: center;
   justify-content: center;
-  background-color: aqua;
+ 
   text-shadow: 20px;
   font-weight: 400;
   font-size: 18px;
+}
+.welcome-heading{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: antiquewhite;
+  padding: 10px;
+  margin-top: 0;
+  transition: 1s;
+}
+
+.welcome-heading:hover{
+  transition-duration: 2s;
+}
+
+.footer-pos{
+  position: relative;
+  bottom: 0;
+  /* margin-top: 10cm; */
+  margin-bottom: 0;
+  min-height: 80vh;
 }

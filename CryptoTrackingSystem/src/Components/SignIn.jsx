@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate
+import './SignIn.css';
 
 const SignIn = () => {
   const [loginData, setLoginData] = useState({
@@ -8,6 +10,8 @@ const SignIn = () => {
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+
+  const navigate = useNavigate();  // Initialize useNavigate hook
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,11 +25,9 @@ const SignIn = () => {
     e.preventDefault();
 
     try {
-      // Fetch users from the live URL
       const response = await axios.get('http://localhost:3000/users');
       const users = response.data;
 
-      // Find if the user exists with matching email and password
       const user = users.find(
         (user) => user.Email === loginData.Email && user.Password === loginData.Password
       );
@@ -33,6 +35,12 @@ const SignIn = () => {
       if (user) {
         setSuccess('Login successful!');
         setError('');
+
+        // Redirect to the home page after successful login
+        setTimeout(() => {
+          navigate('/');  // Redirect to the home page
+        }, 1000);  // Optional: Wait 1 second before redirecting to show success message
+
       } else {
         setError('Invalid email or password');
         setSuccess('');
