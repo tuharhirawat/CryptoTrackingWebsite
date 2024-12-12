@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "json-server": "json-server --watch ./src/data/dbb.json",
+    "json-server": "json-server --watch ./src/data/db.json",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",

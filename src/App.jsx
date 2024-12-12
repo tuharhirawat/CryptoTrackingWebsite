@@ -9,6 +9,7 @@ import Main from './Components/AirdropSearch';
 import SignIn from './Components/SignIn';
 import Mainlayout from './layouts/MainLayout';
 import AppRouter from './routes/AppRouter';
+import UserLayout from './layouts/UserLayout';
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
       <SignIn/> */}
     {/* <Main /> */}
     <AppRouter />
+
+    {/* <UserLayout /> */}
     </>
   );
 }
