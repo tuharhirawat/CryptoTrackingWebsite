@@ -1,0 +1,51 @@
+
+
+.coin-pricing-container{
+    display: flexbox;
+   }
+
+   .search-container {
+    position: relative;
+    /* margin-bottom: 20px; */
+  }
+  
+  .search-box {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .suggestions-list {
+    position: absolute;
+    text-align: center;
+    background-color: cadetblue;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    width: 80%;
+  }
+  
+  .suggestions-list li {
+    padding: 10px;
+  }
+  
+  .coin-pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  
+  .coin-pricing-table th,
+  .coin-pricing-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .positive {
+    color: green;
+  }
+  
+  .negative {
+    color: red;
+  }
+  

@@ -8,26 +8,68 @@ import Airdrop from '../pages/Airdrop'
 import Mainlayout from '../layouts/MainLayout'
 import SignIn from '../Components/SignIn'
 import SignUp from '../Components/SignUp'
+import './AppRouter.css'
+import UserLayout from '../layouts/UserLayout'
 
 
 function AppRouter() {
   return (<>
     
     <Router>
+
         < Mainlayout>
             <Routes>
                 <Route path='/' element={<Home/>}>Home</Route>
-                <Route path='/airdrop' element={ <Airdrop /> }>Airdrop</Route>
+                {/* <Route path='/airdrop' element={ <Airdrop /> }>Airdrop</Route> */}
                 <Route path='/pricing' element={ <CryptoPricing /> }>Crypto Pricing</Route>
                 <Route path='/news' element={<News/>}>News</Route>
+                <Route path='/airdrop' element={ <Airdrop /> }>Airdrop</Route>
                 <Route path='/about' element={<About />}>About</Route>
                 <Route path='/signin' element={ <SignIn /> }>About</Route>
                 <Route path='/signup' element={ <SignUp /> }>About</Route>
             </Routes>
         </Mainlayout>
+
     </Router>
 
+    {/* <Router>
+    <UserLayout >
+    <Route path='/airdrop' element={ <Airdrop /> }>Airdrop</Route>
+    </UserLayout>
+    </Router> */}
  </>)
 }
 
 export default AppRouter
+
+
+
+// import React from 'react';
+// import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+// import Dashboard from '../pages/Dashboard';  // Add import for Dashboard
+// import SignIn from '../Components/SignIn';
+// import SignUp from '../Components/SignUp';
+// import './AppRouter.css';
+
+// function AppRouter() {
+//   const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+
+//   return (
+//     <Router>
+//       <Routes>
+//         {/* If logged in, show Dashboard route */}
+//         {isLoggedIn ? (
+//           <Route path="/dashboard" element={<Dashboard />} />
+//         ) : (
+//           // Redirect to sign-in if not logged in
+//           <Route path="/signin" element={<SignIn />} />
+//         )}
+
+//         <Route path="/signup" element={<SignUp />} />
+//         <Route path="*" element={<Navigate to="/signin" />} />
+//       </Routes>
+//     </Router>
+//   );
+// }
+
+// export default AppRouter;

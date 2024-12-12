@@ -1,74 +1,59 @@
-import React, { useEffect, useState } from 'react';
-import './news.css';
+// News.js
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './News.css';  // Optional: Add your custom CSS styling
 
-// Function to fetch crypto news
-// Function to fetch crypto news
-const fetchCryptoNews = async () => {
-  const url = `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI?q=cryptocurrency&pageNumber=1&pageSize=10&autoCorrect=true`;
-
-  try {
-    const response = await fetch(url, {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
-        // 'X-RapidAPI-Key': 'your_rapidapi_key', // Replace with your actual RapidAPI key
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error('Failed to fetch news');
-    }
-
-    const data = await response.json();
-    return data.value; // Return the news data
-  } catch (err) {
-    console.error(err);
-    throw err; // Rethrow the error for handling in the calling function
-  }
-};
-
-
-// Main News component
 const News = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const loadNews = async () => {
+    // Fetch cryptocurrency news from NewsAPI
+    const fetchCryptoNews = async () => {
       try {
-        const data = await fetchCryptoNews(); // Use the reusable function
-        setNews(data);
-      } catch (err) {
-        setError('Failed to fetch news');
-      } finally {
+        const response = await axios.get('https://newsapi.org/v2/everything', {
+          params: {
+            q: 'cryptocurrency',  // Query for cryptocurrency-related news
+            sortBy: 'publishedAt',  // Sort by latest news
+            apiKey: '06ef5516cde44ce18d1155439de795d0',  // Your new API Key here
+          },
+        });
+
+        setNews(response.data.articles);  // Set fetched news
+        setLoading(false);
+      } catch (error) {
+        setError('Error fetching news');
         setLoading(false);
       }
     };
 
-    loadNews();
+    fetchCryptoNews();
   }, []);
 
   return (
-    <div className="news">
-      <h1>Crypto News</h1>
+    <div className="crypto-news-container">
+      <h2>Latest Cryptocurrency News</h2>
+
       {loading && <p>Loading news...</p>}
-      {error && <p className="error">{error}</p>}
-      <div className="news-container">
-        {news.map((item, index) => (
-          <div key={index} className="news-item">
-            <h2>{item.title}</h2>
-            <p>{item.description}</p>
-            <a href={item.url} target="_blank" rel="noopener noreferrer">
-              Read more
-            </a>
-            <p className="source">Source: {item.provider.name}</p>
-          </div>
-        ))}
-      </div>
+      {error && <p>{error}</p>}
+
+      {!loading && !error && (
+        <div className="news-list">
+          {news.map((article, index) => (
+            <div className="news-item" key={index}>
+              <a href={article.url} target="_blank" rel="noopener noreferrer">
+                {article.urlToImage && <img src={article.urlToImage} alt={article.title} className="news-image" />}
+                <h3>{article.title}</h3>
+                <p>{article.description}</p>
+                <span className="news-source">Source: {article.source.name}</span>
+              </a>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
 export default News;
-export { fetchCryptoNews }; // Export the function for reuse

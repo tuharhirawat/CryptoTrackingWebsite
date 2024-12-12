@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
+  const navigate = useNavigate(); // Initialize useNavigate hook for redirection
+
   const [loginData, setLoginData] = useState({
     Email: '',
     Password: ''
   });
+
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
@@ -21,7 +25,7 @@ const SignIn = () => {
     e.preventDefault();
 
     try {
-      // Fetch users from the live URL
+      // Fetch users from the server
       const response = await axios.get('http://localhost:3000/users');
       const users = response.data;
 
@@ -33,12 +37,18 @@ const SignIn = () => {
       if (user) {
         setSuccess('Login successful!');
         setError('');
+        // Redirect to /userlayout after successful login
+        navigate('/mainlayout');
       } else {
         setError('Invalid email or password');
         setSuccess('');
+        // Redirect to /signup if credentials don't match
+        setTimeout(() => {
+          navigate('/signup');
+        }, 2000); // 2-second delay before redirecting
       }
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error('Error fetching data:', error);
       setError('An error occurred. Please try again later.');
       setSuccess('');
     }

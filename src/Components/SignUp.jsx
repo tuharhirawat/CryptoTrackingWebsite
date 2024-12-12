@@ -1,135 +1,118 @@
 import React, { useState } from 'react';
-import './SignUp.css'; // You can create a separate CSS file for styles
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import './SignUp.css';
+
+const signupURL = "http://localhost:3000/users";
 
 const SignUp = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  });
+  const navigate = useNavigate();
 
-  const [errors, setErrors] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  });
+  const [SignUpData, setSignUpData] = useState({
+    Name: "",
+    Email: "",
+    Password: "",
+    ConfirmPassword: "" 
+    });
 
-  // Handle input changes
+  const [successMessage, setSuccessMessage] = useState(""); 
+  const [errorMessage, setErrorMessage] = useState(""); 
+  const [passwordMatchError, setPasswordMatchError] = useState(""); 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setSignUpData({
+      ...SignUpData,
       [name]: value
     });
   };
 
-  // Validate the form
-  const validateForm = () => {
-    const newErrors = {};
-    let isValid = true;
-
-    // Name validation
-    if (!formData.name) {
-      newErrors.name = 'Name is required';
-      isValid = false;
-    }
-
-    // Email validation
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!formData.email) {
-      newErrors.email = 'Email is required';
-      isValid = false;
-    } else if (!emailPattern.test(formData.email)) {
-      newErrors.email = 'Enter a valid email address';
-      isValid = false;
-    }
-
-    // Password validation
-    if (!formData.password) {
-      newErrors.password = 'Password is required';
-      isValid = false;
-    } else if (formData.password.length < 6) {
-      newErrors.password = 'Password must be at least 6 characters';
-      isValid = false;
-    }
-
-    // Confirm Password validation
-    if (formData.confirmPassword !== formData.password) {
-      newErrors.confirmPassword = 'Passwords must match';
-      isValid = false;
-    }
-
-    setErrors(newErrors);
-    return isValid;
-  };
-
-  // Handle form submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      console.log('Form data is valid', formData);
-      // Here you can call an API or handle the form data accordingly.
-    } else {
-      console.log('Form has errors');
+h
+    if (SignUpData.Password !== SignUpData.ConfirmPassword) {
+      setPasswordMatchError("Passwords do not match.");
+      return;
+    }
+
+    try {
+      const response = await axios.post(signupURL, SignUpData);
+      console.log('User registered successfully:', response.data);
+
+      setSuccessMessage("Signup successful! Redirecting to login...");
+
+      setSignUpData({
+        Name: "",
+        Email: "",
+        Password: "",
+        ConfirmPassword: "" 
+      });
+
+      setTimeout(() => {
+        navigate('/signin');
+      }, 3000);
+
+    } catch (error) {
+      console.error("Error during sign up:", error);
+
+      setErrorMessage("Error during signup. Please try again.");
     }
   };
 
   return (
     <div className="sign-up-container">
       <h2>Sign Up</h2>
+      {successMessage && <div className="success-message">{successMessage}</div>}
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
+      {passwordMatchError && <div className="error-message">{passwordMatchError}</div>} 
+      
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="Name">Name:</label>
           <input
             type="text"
-            id="name"
-            name="name"
-            value={formData.name}
+            id="Name"
+            name="Name"
+            value={SignUpData.Name}
             onChange={handleChange}
             required
           />
-          {errors.name && <p className="error">{errors.name}</p>}
         </div>
 
         <div className="form-group">
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="Email">Email:</label>
           <input
             type="email"
-            id="email"
-            name="email"
-            value={formData.email}
+            id="Email"
+            name="Email"
+            value={SignUpData.Email}
             onChange={handleChange}
             required
           />
-          {errors.email && <p className="error">{errors.email}</p>}
         </div>
 
         <div className="form-group">
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="Password">Password:</label>
           <input
             type="password"
-            id="password"
-            name="password"
-            value={formData.password}
+            id="Password"
+            name="Password"
+            value={SignUpData.Password}
             onChange={handleChange}
             required
           />
-          {errors.password && <p className="error">{errors.password}</p>}
         </div>
 
         <div className="form-group">
-          <label htmlFor="confirmPassword">Confirm Password:</label>
+          <label htmlFor="ConfirmPassword">Confirm Password:</label>
           <input
             type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            value={formData.confirmPassword}
+            id="ConfirmPassword"
+            name="ConfirmPassword"
+            value={SignUpData.ConfirmPassword}
             onChange={handleChange}
             required
           />
-          {errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
         </div>
 
         <button type="submit" className="signup-btn">Sign Up</button>

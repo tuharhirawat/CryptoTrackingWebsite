@@ -25,7 +25,7 @@ function App() {
     </div>
       <SignIn/> */}
     {/* <Main /> */}
-  <AppRouter/>
+    <AppRouter />
     </>
   );
 }
