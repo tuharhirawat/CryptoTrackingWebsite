@@ -1,12 +1,14 @@
 
 
-.coin-pricing-container{
+  .coin-pricing-container{
     display: flexbox;
+    margin-top: 25vh;
    }
 
    .search-container {
+    /* margin-top: 30vh; */
     position: relative;
-    /* margin-bottom: 20px; */
+    margin-bottom: 20px;
   }
   
   .search-box {
@@ -31,6 +33,7 @@
   .coin-pricing-table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 12vh;
     margin-top: 15px;
   }
   

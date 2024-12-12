@@ -58,14 +58,45 @@ const AirdropSearch = () => {
       Description:
         "Participate in the KaisarNetwork Airdrop by registering through the referral link, completing social media tasks, and referring friends. Unlock free tokens and enhance your participation in the KaisarNetwork community.",
     },
-    // Add more dummy data if needed
+    {
+      id: 6,
+      AirdropName: "KaisarNetwork New Airdrop",
+      TokenSymbol: "NaN",
+      AirdropWebsite: "https://zero.kaisar.io/register",
+      SocialMediaRequirement: "True",
+      ReferralProgram: "False",
+      AirdropStatus: "Active",
+      Description:
+        "Participate in the KaisarNetwork New Airdrop by registering through the referral link, completing social media tasks, and referring friends. Unlock free tokens and enhance your participation in the KaisarNetwork community.",
+    },
+    {
+      id: 7,
+      AirdropName: "Reebok Network Airdrop",
+      TokenSymbol: "NaN",
+      AirdropWebsite: "https://zero.kaisar.io/login",
+      SocialMediaRequirement: "True",
+      ReferralProgram: "False",
+      AirdropStatus: "Active",
+      Description:
+        "Participate in the KaisarNetwork Airdrop by registering through the referral link, completing social media tasks, and referring friends. Unlock free tokens and enhance your participation in the KaisarNetwork community.",
+    },
+    {
+      id: 8,
+      AirdropName: "Kesar Waisar Airdrop",
+      TokenSymbol: "NaN",
+      AirdropWebsite: "https://zero.kaisar.io/register",
+      SocialMediaRequirement: "True",
+      ReferralProgram: "True",
+      AirdropStatus: "Active",
+      Description:
+        "Participate in the KaisarNetwork Airdrop by registering through the referral link, completing social media tasks, and referring friends. Unlock free tokens and enhance your participation in the KaisarNetwork community.",
+    }
   ];
 
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredAirdrops, setFilteredAirdrops] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
 
-  // Handle input change and provide suggestions
   const handleInputChange = (e) => {
     const value = e.target.value.toLowerCase().trim();
     setSearchTerm(value);
@@ -83,17 +114,15 @@ const AirdropSearch = () => {
     setSuggestions(matches);
   };
 
-  // Handle search button click
   const handleSearchClick = () => {
     const matches = dummyData.filter((airdrop) =>
       airdrop.AirdropName.toLowerCase().includes(searchTerm)
     );
 
     setFilteredAirdrops(matches);
-    setSuggestions([]); // Clear suggestions after search
+    setSuggestions([]); 
   };
 
-  // Handle suggestion click
   const handleSuggestionClick = (airdrop) => {
     setSearchTerm(airdrop.AirdropName);
     setFilteredAirdrops([airdrop]);
@@ -117,7 +146,6 @@ const AirdropSearch = () => {
         SEARCH
       </button>
 
-      {/* Display Suggestions */}
       {suggestions.length > 0 && (
         <ul className="suggestions-list">
           {suggestions.map((airdrop) => (
@@ -131,7 +159,6 @@ const AirdropSearch = () => {
         </ul>
       )}
 
-      {/* Display Filtered Airdrop Details */}
       {filteredAirdrops.length > 0 && (
         <div className="results-container">
           {filteredAirdrops.map((airdrop) => (
@@ -161,7 +188,6 @@ const AirdropSearch = () => {
         </div>
       )}
 
-      {/* No Results Message */}
       {filteredAirdrops.length === 0 && searchTerm !== "" && (
         <p className="no-results">No results found</p>
       )}

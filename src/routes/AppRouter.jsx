@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import {BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom"
 import Home from '../pages/Home'
 import About from '../pages/About'
 import CryptoPricing from '../pages/CryptoPricing'
@@ -30,6 +30,8 @@ function AppRouter() {
             </Routes>
         </Mainlayout>
 
+        <Outlet />
+
     </Router>
 
     {/* <Router>
@@ -57,11 +59,9 @@ export default AppRouter
 //   return (
 //     <Router>
 //       <Routes>
-//         {/* If logged in, show Dashboard route */}
 //         {isLoggedIn ? (
 //           <Route path="/dashboard" element={<Dashboard />} />
 //         ) : (
-//           // Redirect to sign-in if not logged in
 //           <Route path="/signin" element={<SignIn />} />
 //         )}
 

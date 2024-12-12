@@ -138,6 +138,7 @@ body {
   background-size: cover;
   background-position: center;
   background-color: aqua;
+  font-size: 8rem;
   color: grey;
   height: 200vh;
   display: flex;
@@ -151,9 +152,8 @@ body {
   font-size: 2rem;
 }
 
-/* App.css */
 .App {
-  margin-top: 60px; /* Adjust this based on navbar height */
+  margin-top: 60px; 
   font-family: Arial, sans-serif;
 }
 
@@ -179,8 +179,8 @@ main {
 /* footer section */
 
 footer{
-  background-color: brown;
   color: beige;
+  font-size: 2rem;
   align-content: center;
   justify-content: center;
   margin-bottom: 0;

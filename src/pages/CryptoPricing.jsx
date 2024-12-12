@@ -99,7 +99,7 @@ const CoinPricing = () => {
             {coins.map((coin) => (
               <tr key={coin.id}>
                 <td>{coin.name}</td>
-                <td>${coin.current_price.toFixed(2)}</td>
+                <td>${coin.current_price.toFixed(4)}</td>
                 <td
                   className={coin.price_change_percentage_24h >= 0 ? 'positive' : 'negative'}
                 >
