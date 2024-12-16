@@ -612,7 +612,7 @@ const SignUp = () => {
             name="Name"
             value={SignUpData.Name}
             onChange={handleChange}
-            required
+            // required
           />
           {fieldErrors.Name && <div className="error-message">{fieldErrors.Name}</div>}
         </div>
@@ -625,7 +625,7 @@ const SignUp = () => {
             name="Email"
             value={SignUpData.Email}
             onChange={handleChange}
-            required
+            // required
           />
           {fieldErrors.Email && <div className="error-message">{fieldErrors.Email}</div>}
         </div>
@@ -638,7 +638,7 @@ const SignUp = () => {
             name="Password"
             value={SignUpData.Password}
             onChange={handleChange}
-            required
+            // required
           />
           {fieldErrors.Password && <div className="error-message">{fieldErrors.Password}</div>}
         </div>
@@ -651,7 +651,7 @@ const SignUp = () => {
             name="ConfirmPassword"
             value={SignUpData.ConfirmPassword}
             onChange={handleChange}
-            required
+            // required
           />
           {fieldErrors.ConfirmPassword && (
             <div className="error-message">{fieldErrors.ConfirmPassword}</div>

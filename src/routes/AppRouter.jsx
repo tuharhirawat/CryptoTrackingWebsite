@@ -15,14 +15,29 @@ import axios from 'axios'
 
 function AppRouter() {
   
-    const isLoggedIn=axios.get
+    // const isLoggedIn=axios.get
   
   return (<>
     
+        
+
+        
+        {/* <Router>
+        <Mainlayout >
+        <Routes>
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/" element={<Home />} />
+        <Route path='/about' element={<About />}>About</Route>
+        <Route path='/news' element={<News/>}>News</Route>
+        </Routes>
+        </Mainlayout>
+        </Router> */}
+        
+
     <Router>
 
         < Mainlayout>
-        {/* <UserLayout > */}
             <Routes>
                 <Route path='/' element={<Home/>}>Home</Route>
                 <Route path='/pricing' element={ <CryptoPricing /> }>Crypto Pricing</Route>
@@ -33,7 +48,6 @@ function AppRouter() {
                 <Route path='/signup' element={ <SignUp /> }>SignUp</Route>
                 <Route path='/pricing' element={ <CryptoPricing /> }>Logout</Route>
             </Routes>
-        {/* </UserLayout> */}
         </Mainlayout>
 
         <Outlet />

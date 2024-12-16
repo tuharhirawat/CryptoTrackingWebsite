@@ -219,118 +219,245 @@
 
 
 
-import React, { useState } from 'react';  
-import axios from 'axios';  
+// import React, { useState } from 'react';  
+// import axios from 'axios';  
 
-const SignIn = () => {  
-  const [loginData, setLoginData] = useState({  
-    Email: '',  
-    Password: ''  
-  });  
-  const [error, setError] = useState({  
-    Email: '',  
-    Password: '',  
-    general: ''  
-  });  
-  const [success, setSuccess] = useState('');  
+// const SignIn = () => {  
+//   const [loginData, setLoginData] = useState({  
+//     Email: '',  
+//     Password: ''  
+//   });  
+//   const [error, setError] = useState({  
+//     Email: '',  
+//     Password: '',  
+//     general: ''  
+//   });  
+//   const [success, setSuccess] = useState('');  
 
-  const handleChange = (e) => {  
-    const { name, value } = e.target;  
-    setLoginData({  
-      ...loginData,  
-      [name]: value  
-    });  
+//   const handleChange = (e) => {  
+//     const { name, value } = e.target;  
+//     setLoginData({  
+//       ...loginData,  
+//       [name]: value  
+//     });  
 
-    setError({  
-      ...error,  
-      [name]: ''  
-    });  
-  };  
+//     setError({  
+//       ...error,  
+//       [name]: ''  
+//     });  
+//   };  
 
-  const handleSubmit = async (e) => {  
-    e.preventDefault();  
+//   const handleSubmit = async (e) => {  
+//     e.preventDefault();  
 
-    setError({ ...error, general: '' });  
+//     setError({ ...error, general: '' });  
 
-    const newError = { Email: '', Password: '', general: '' };  
+//     const newError = { Email: '', Password: '', general: '' };  
     
-    if (!loginData.Email) {  
-      newError.Email = 'Please enter your email';  
-    } else {  
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;  
-      if (!emailPattern.test(loginData.Email)) {  
-        newError.Email = 'Please enter a valid email address';  
-      }  
-    }  
+//     if (!loginData.Email) {  
+//       newError.Email = 'Please enter your email';  
+//     } else {  
+//       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;  
+//       if (!emailPattern.test(loginData.Email)) {  
+//         newError.Email = 'Please enter a valid email address';  
+//       }  
+//     }  
     
-    if (!loginData.Password) {  
-      newError.Password = 'Please enter your password';  
-    }  
+//     if (!loginData.Password) {  
+//       newError.Password = 'Please enter your password';  
+//     }  
 
-    if (newError.Email || newError.Password) {  
-      setError(newError);  
-      return;  
-    }  
+//     if (newError.Email || newError.Password) {  
+//       setError(newError);  
+//       return;  
+//     }  
 
-    try {  
-      const response = await axios.get('http://localhost:3000/users');  
-      const users = response.data;  
+//     try {  
+//       const response = await axios.get('http://localhost:3000/users');  
+//       const users = response.data;  
 
-      const user = users.find((user) => user.Email === loginData.Email);  
+//       const user = users.find((user) => user.Email === loginData.Email);  
 
-      if (!user) {  
-        setError({ ...error, general: 'User not found' });  
-        setSuccess('');  
-      } else if (user.Password !== loginData.Password) {  
-        setError({ ...error, Password: 'Incorrect password' });  
-        setSuccess('');  
-      } else {  
-        setSuccess('Login successful!');  
-        setError({ Email: '', Password: '', general: '' });  
-      }  
-    } catch (error) {  
-      console.error("Error fetching data:", error);  
-      setError({ ...error, general: 'An error occurred. Please try again later.' });  
-      setSuccess('');  
-    }  
-  };  
+//       if (!user) {  
+//         setError({ ...error, general: 'User not found' });  
+//         setSuccess('');  
+//       } else if (user.Password !== loginData.Password) {  
+//         setError({ ...error, Password: 'Incorrect password' });  
+//         setSuccess('');  
+//       } else {  
+//         setSuccess('Login successful!');  
+//         setError({ Email: '', Password: '', general: '' });  
+//       }  
+//     } catch (error) {  
+//       console.error("Error fetching data:", error);  
+//       setError({ ...error, general: 'An error occurred. Please try again later.' });  
+//       setSuccess('');  
+//     }  
+//   };  
 
-  return (  
-    <div className="sign-in-container">  
-      <h2>Sign In</h2>  
-      <form onSubmit={handleSubmit}>  
-        <div className="form-group">  
-          <label htmlFor="Email">Email:</label>  
-          <input  
-            type="email"  
-            id="Email"  
-            name="Email"  
-            value={loginData.Email}  
-            onChange={handleChange}  
+//   return (  
+//     <div className="sign-in-container">  
+//       <h2>Sign In</h2>  
+//       <form onSubmit={handleSubmit}>  
+//         <div className="form-group">  
+//           <label htmlFor="Email">Email:</label>  
+//           <input  
+//             type="email"  
+//             id="Email"  
+//             name="Email"  
+//             value={loginData.Email}  
+//             onChange={handleChange}  
               
-          />  
-          {error.Email && <div className="error">{error.Email}</div>}  
-        </div>  
+//           />  
+//           {error.Email && <div className="error">{error.Email}</div>}  
+//         </div>  
 
-        <div className="form-group">  
-          <label htmlFor="Password">Password:</label>  
-          <input  
-            type="password"  
-            id="Password"  
-            name="Password"  
-            value={loginData.Password}  
-            onChange={handleChange}  
+//         <div className="form-group">  
+//           <label htmlFor="Password">Password:</label>  
+//           <input  
+//             type="password"  
+//             id="Password"  
+//             name="Password"  
+//             value={loginData.Password}  
+//             onChange={handleChange}  
               
-          />  
-          {error.Password && <div className="error">{error.Password}</div>}  
-        </div>  
+//           />  
+//           {error.Password && <div className="error">{error.Password}</div>}  
+//         </div>  
 
-        {error.general && <div className="error">{error.general}</div>}  
+//         {error.general && <div className="error">{error.general}</div>}  
 
-        <button type="submit" className="signin-btn">Sign In</button>  
-      </form>  
-    </div>  
-  );  
-};  
+//         <button type="submit" className="signin-btn">Sign In</button>  
+//       </form>  
+//     </div>  
+//   );  
+// };  
+
+// export default SignIn;
+
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+const SignIn = () => {
+  const [loginData, setLoginData] = useState({
+    Email: '',
+    Password: ''
+  });
+  const [error, setError] = useState({
+    Email: '',
+    Password: '',
+    general: ''
+  });
+  const [success, setSuccess] = useState('');
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setLoginData({
+      ...loginData,
+      [name]: value
+    });
+
+    setError({
+      ...error,
+      [name]: ''
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setError({ Email: '', Password: '', general: '' });
+
+    const newError = { Email: '', Password: '', general: '' };
+
+    // Email validation
+    if (!loginData.Email) {
+      newError.Email = 'Please enter your email';
+    } else {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(loginData.Email)) {
+        newError.Email = 'Please enter a valid email address';
+      }
+    }
+
+    // Password validation
+    if (!loginData.Password) {
+      newError.Password = 'Please enter your password';
+    } else if (loginData.Password.length < 6) {
+      newError.Password = 'Password must be at least 6 characters long';
+    }
+
+    if (newError.Email || newError.Password) {
+      setError(newError);
+      return;
+    }
+
+    try {
+      const response = await axios.get('http://localhost:3000/users');
+      const users = response.data;
+
+      const user = users.find((user) => user.Email === loginData.Email);
+
+      if (!user) {
+        setError({ ...error, general: 'User not found. Redirecting to Signup...' });
+        setSuccess('');
+        setTimeout(() => {
+          navigate('/signup'); // Redirect to signup page
+        }, 3000);
+      } else if (user.Password !== loginData.Password) {
+        setError({ ...error, Password: 'Incorrect password' });
+        setSuccess('');
+      } else {
+        setSuccess('Login successful! Redirecting to Home...');
+        setError({ Email: '', Password: '', general: '' });
+        setTimeout(() => {
+          navigate('/'); // Redirect to home page
+        }, 2000);
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      setError({ ...error, general: 'An error occurred. Please try again later.' });
+      setSuccess('');
+    }
+  };
+
+  return (
+    <div className="sign-in-container">
+      <h2>Sign In</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="Email">Email:</label>
+          <input
+            type="email"
+            id="Email"
+            name="Email"
+            value={loginData.Email}
+            onChange={handleChange}
+          />
+          {error.Email && <div className="error">{error.Email}</div>}
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="Password">Password:</label>
+          <input
+            type="password"
+            id="Password"
+            name="Password"
+            value={loginData.Password}
+            onChange={handleChange}
+          />
+          {error.Password && <div className="error">{error.Password}</div>}
+        </div>
+
+        {error.general && <div className="error">{error.general}</div>}
+        {success && <div className="success">{success}</div>}
+
+        <button type="submit" className="signin-btn">Sign In</button>
+      </form>
+    </div>
+  );
+};
 
 export default SignIn;

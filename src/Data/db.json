@@ -90,6 +90,20 @@
       "Email": "tusharshekhawat193@gmail.com",
       "Password": "Tushar@1234",
       "id": "2Ys9gY7"
+    },
+    {
+      "Name": "Tushar Singh",
+      "Email": "tusharsingh7005@gmail.com",
+      "Password": "Tushar@1234",
+      "id": "f3ZKB5G"
+    },
+    {
+      "Name": "Pranitha",
+      "Username": "Pranitha Nuthalapathi",
+      "Email": "",
+      "Password": "",
+      "ConfirmPassword": "",
+      "id": "G-7rtcd"
     }
   ]
 }
