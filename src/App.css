@@ -1,0 +1,195 @@
+/* .header{
+  background-image: url('https://plus.unsplash.com/premium_photo-1663089688180-444ff0066e5d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  height: 200vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  text-align: center;
+}
+
+.main-body{
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  text-align: center;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; 
+  padding: 20px;
+  position: relative;
+}
+
+#search-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+#crypto-search {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#search-button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#search-button:hover {
+  background-color: #0056b3;
+}
+
+#suggestions {
+  position: absolute;
+  top: 50px; 
+  left: 15%;
+  width: 70%;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  text-align: left;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#suggestions li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#suggestions li:hover {
+  background-color: #f0f0f0;
+}
+
+.hidden {
+  display: none;
+}
+
+#crypto-info {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+}
+
+img {
+  max-width: 100px;
+  margin: 10px 0;
+}
+
+.footer{
+  color:black;
+  font-size: larger;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+} */
+
+/* .header {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #282c34;
+  color: white;
+  position: fixed;
+  top: 0;
+} */
+
+
+
+.header{
+  background-size: cover;
+  background-position: center;
+  background-color: aqua;
+  color: grey;
+  height: 200vh;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* App.css */
+.App {
+  margin-top: 60px; /* Adjust this based on navbar height */
+  font-family: Arial, sans-serif;
+}
+
+main {
+  padding: 20px;
+}
+
+.App h1{
+  text-align: center;
+}
+
+.App p{
+  text-align: center;
+  justify-content: center;
+ 
+  text-shadow: 20px;
+  font-weight: 400;
+  font-size: 18px;
+}
+.welcome-heading{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: antiquewhite;
+  padding: 10px;
+  margin-top: 0;
+  transition: 1s;
+}
+
+.welcome-heading:hover{
+  transition-duration: 2s;
+}
+
+.footer-pos{
+  position: sticky;
+  bottom: 0;
+  /* margin-top: 10cm; */
+  margin-bottom: 0;
+  min-height: 80vh;
+}
