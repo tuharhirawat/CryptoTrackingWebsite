@@ -162,10 +162,10 @@ const SignUp = () => {
     return regex.test(email);
   };
 
-  const validatePassword = (password) => {
-    const regex = /^(?=.[A-Za-z])(?=.\d)[A-Za-z\d@$!%*?&]{8,}$/;
-    return regex.test(password);
-  };
+  // const validatePassword = (password) => {
+  //   const regex = /^(?=.[A-Za-z])(?=.\d)[A-Za-z\d@$!%*?&]{8,}$/;
+  //   return regex.test(password);
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -180,10 +180,10 @@ const SignUp = () => {
       return;
     }
 
-    if (!validatePassword(SignUpData.Password)) {
-      setErrorMessage("Password must be at least 8 characters long and contain at least one letter and one number.");
-      return;
-    }
+    // if (!validatePassword(SignUpData.Password)) {
+    //   setErrorMessage("Password must be at least 8 characters long and contain at least one letter and one number.");
+    //   return;
+    // }
 
     if (SignUpData.Password !== SignUpData.ConfirmPassword) {
       setErrorMessage("Passwords do not match.");
