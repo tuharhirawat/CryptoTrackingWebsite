@@ -10,24 +10,30 @@ import SignIn from '../Components/SignIn'
 import SignUp from '../Components/SignUp'
 import './AppRouter.css'
 import UserLayout from '../layouts/UserLayout'
+import axios from 'axios'
 
 
 function AppRouter() {
+  
+    const isLoggedIn=axios.get
+  
   return (<>
     
     <Router>
 
         < Mainlayout>
+        {/* <UserLayout > */}
             <Routes>
                 <Route path='/' element={<Home/>}>Home</Route>
-                {/* <Route path='/airdrop' element={ <Airdrop /> }>Airdrop</Route> */}
                 <Route path='/pricing' element={ <CryptoPricing /> }>Crypto Pricing</Route>
                 <Route path='/news' element={<News/>}>News</Route>
                 <Route path='/airdrop' element={ <Airdrop /> }>Airdrop</Route>
                 <Route path='/about' element={<About />}>About</Route>
-                <Route path='/signin' element={ <SignIn /> }>About</Route>
-                <Route path='/signup' element={ <SignUp /> }>About</Route>
+                <Route path='/signin' element={ <SignIn /> }>SignIn</Route>
+                <Route path='/signup' element={ <SignUp /> }>SignUp</Route>
+                <Route path='/pricing' element={ <CryptoPricing /> }>Logout</Route>
             </Routes>
+        {/* </UserLayout> */}
         </Mainlayout>
 
         <Outlet />

@@ -13,12 +13,12 @@ const Navbar = () => {
               <li>
                 <NavLink to="/">Home</NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink to="/airdrop">Airdrop</NavLink>
               </li>
               <li>
                 <NavLink to="/pricing">Crypto Pricing</NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink to="/news">News</NavLink>
               </li>
